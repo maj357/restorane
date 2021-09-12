@@ -1130,15 +1130,6 @@ window.onload = function () {
 			document.querySelector('.main__body-mobile').classList.remove('_active');
 			document.querySelector('.icon-menu').classList.remove('_active');
 			document.querySelector('body').classList.remove('_lock');
-			$('#meat-title').removeClass('meat-title_active');
-			$('#vegan-title').removeClass('vegan-title_active');
-			$('#drink-title').removeClass('drink-title_active');
-			$('#meat-btn').removeClass('meat-btn_active');
-			$('#vegan-btn').removeClass('vegan-btn_active');
-			$('#drink-btn').removeClass('drink-btn_active');
-			$('.meat-bg').removeClass('meat-bg_active');
-			$('.vegan-bg').removeClass('vegan-bg_active');
-			$('.drink-bg').removeClass('drink-bg_active');
 		}
 	}
 
@@ -1166,9 +1157,9 @@ window.onload = function () {
 		$('.meat-bg').toggleClass('meat-bg_active');
 		$('#vegan-title').removeClass('vegan-title_active');
 		$('#vegan-btn').removeClass('vegan-btn_active');
+		$('.vegan-bg').removeClass('vegan-bg_active');
 		$('#drink-title').removeClass('drink-title_active');
 		$('#drink-btn').removeClass('drink-btn_active');
-		$('.vegan-bg').removeClass('vegan-bg_active');
 		$('.drink-bg').removeClass('drink-bg_active');
 	});
 
@@ -1178,22 +1169,22 @@ window.onload = function () {
 		$('.vegan-bg').toggleClass('meat-bg_active');
 		$('#drink-title').removeClass('drink-title_active');
 		$('#drink-btn').removeClass('drink-btn_active');
+		$('.drink-bg').removeClass('drink-bg_active');
 		$('#meat-title').removeClass('meat-title_active');
 		$('#meat-btn').removeClass('meat-btn_active');
 		$('.meat-bg').removeClass('meat-bg_active');
-		$('.drink-bg').removeClass('drink-bg_active');
 	});
 
 	$('#drink-item').on("click", function () {
 		$('#drink-title').toggleClass('drink-title_active');
 		$('#drink-btn').toggleClass('drink-btn_active');
-		$('.vegan-bg').toggleClass('meat-bg_active');
+		$('.drink-bg').toggleClass('drink-bg_active');
 		$('#meat-title').removeClass('meat-title_active');
 		$('#meat-btn').removeClass('meat-btn_active');
+		$('.meat-bg').removeClass('meat-bg_active');
 		$('#vegan-title').removeClass('vegan-title_active');
 		$('#vegan-btn').removeClass('vegan-btn_active');
 		$('.vegan-bg').removeClass('vegan-bg_active');
-		$('.meat-bg').removeClass('meat-bg_active');
 	});
 
 	// Header
