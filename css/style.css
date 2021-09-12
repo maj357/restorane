@@ -1197,37 +1197,6 @@ body.ie ._ibg img {
   position: relative;
 }
 
-.item:focus::after {
-  width: 2px;
-  height: 100vh;
-  opacity: 1;
-}
-
-.item:focus .item__menu::before {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.item:focus .item__menu::after {
-  opacity: 0.85;
-  -webkit-transform: translate(-50%, -50%) skew(8deg);
-      -ms-transform: translate(-50%, -50%) skew(8deg);
-          transform: translate(-50%, -50%) skew(8deg);
-}
-
-.item:focus .item__title {
-  -webkit-transform: translate(-50%, -80%);
-      -ms-transform: translate(-50%, -80%);
-          transform: translate(-50%, -80%);
-}
-
-.item:focus .item__btn {
-  opacity: 1;
-  -webkit-transform: translate(-50%, -200%) skew(8deg);
-      -ms-transform: translate(-50%, -200%) skew(8deg);
-          transform: translate(-50%, -200%) skew(8deg);
-}
-
 .item__menu {
   position: absolute;
   top: 50%;
@@ -1237,6 +1206,9 @@ body.ie ._ibg img {
           transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .item__menu::before {
@@ -1490,33 +1462,6 @@ body.ie ._ibg img {
     top: 99.5%;
   }
 
-  .item:focus::after {
-    width: 100%;
-    height: 1.5px;
-    bottom: 0;
-  }
-
-  .item:focus .item__menu::after {
-    -webkit-transform: translate(-50%, -50%) skew(0);
-        -ms-transform: translate(-50%, -50%) skew(0);
-            transform: translate(-50%, -50%) skew(0);
-  }
-
-  .item:focus .item__title {
-    -webkit-transform: translate(20px, 0px);
-        -ms-transform: translate(20px, 0px);
-            transform: translate(20px, 0px);
-    color: #fff;
-  }
-
-  .item:focus .item__btn {
-    -webkit-transform: translate(-50%, -75%) skew(0);
-        -ms-transform: translate(-50%, -75%) skew(0);
-            transform: translate(-50%, -75%) skew(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
   .item__menu::after {
     display: none;
   }
@@ -1592,15 +1537,36 @@ body.ie ._ibg img {
   }
 }
 
+@media (any-hover: none) and (max-width: 767.98px) {
+  .item__menu {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.7);
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+
+  .item__menu.meat-bg_active {
+    background-color: rgba(17, 17, 17, 0);
+  }
+
+  .item__menu.vegan-bg_active {
+    background-color: rgba(17, 17, 17, 0);
+  }
+
+  .item__menu.drink-bg_active {
+    background-color: rgba(17, 17, 17, 0);
+  }
+}
+
 @media (max-width: 479.98px) {
   .header__logo {
     -webkit-transform: translate(-50%, -15px) scale(0.5);
         -ms-transform: translate(-50%, -15px) scale(0.5);
             transform: translate(-50%, -15px) scale(0.5);
-  }
-
-  .item:focus .item__btn {
-    opacity: 0.91;
   }
 
   .item__btn {
@@ -1663,8 +1629,53 @@ body.ie ._ibg img {
 }
 
 @media (any-hover: none) {
-  .item__menu::before:focus {
-    background-color: rgba(17, 17, 17, 0.1);
+  .item__menu::before {
+    display: none;
+  }
+
+  .item__title.meat-title_active {
+    -webkit-transform: translate(20px, 0px);
+        -ms-transform: translate(20px, 0px);
+            transform: translate(20px, 0px);
+    color: #fff;
+  }
+
+  .item__title.vegan-title_active {
+    -webkit-transform: translate(20px, 0px);
+        -ms-transform: translate(20px, 0px);
+            transform: translate(20px, 0px);
+    color: #fff;
+  }
+
+  .item__title.drink-title_active {
+    -webkit-transform: translate(20px, 0px);
+        -ms-transform: translate(20px, 0px);
+            transform: translate(20px, 0px);
+    color: #fff;
+  }
+
+  .item__btn.meat-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .item__btn.vegan-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .item__btn.drink-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
 
