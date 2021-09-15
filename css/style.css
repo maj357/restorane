@@ -1995,7 +1995,7 @@ body.ie ._ibg img {
   }
 
   .contacts__info {
-    background: none;
+    background: transparent;
   }
 
   .contacts__info-title {
