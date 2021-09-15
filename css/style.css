@@ -1742,7 +1742,7 @@ body.ie ._ibg img {
   }
 
   .box__title {
-    font-size: calc(18px + 4 * ((100vw - 320px) / 680));
+    font-size: calc(15px + 7 * ((100vw - 320px) / 680));
   }
 
   .box__adress {

@@ -312,7 +312,7 @@ if (document.querySelector('.slider__body')) {
 		autoplay: {
 			delay: 7000,
 		},
-		speed: 2000,
+		speed: 800,
 		loop: true,
 		loopAdditionalSlides: 5,
 		preloadImages: false,
