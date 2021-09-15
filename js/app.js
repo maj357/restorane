@@ -303,23 +303,31 @@ if (document.querySelector('.post__slider-body')) {
 	});
 }
 
-if (document.querySelector('.image-post__body')) {
-	new Swiper('.image-post__body', {
+if (document.querySelector('.slider__body')) {
+	new Swiper('.slider__body', {
+		observer: true,
+		observeParents: true,
 		slidesPerView: 1,
-		spaceBetween: 15,
+		watchOverflow: true,
 		autoplay: {
 			delay: 7000,
 		},
 		speed: 2000,
+		loop: true,
+		loopAdditionalSlides: 5,
+		preloadImages: false,
 		parallax: true,
 		// Dotts
 		pagination: {
-			el: '.image-post__dotts',
+			el: '.slider__controls-dotts',
 			clickable: true,
 		},
-		nested: true,
+		// Arrows
+		navigation: {
+			nextEl: '.slider__controls-arrows .slider-arrow_next',
+		}
 	});
-}
+}	
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -392,15 +400,15 @@ if (iconMenu != null) {
 		if (unlock) {
 			body_lock(delay);
 			iconMenu.classList.toggle("_active");
-			// menuBody.classList.toggle("_active");
+			menuBody.classList.toggle("_active");
 		}
 	});
 };
 function menu_close() {
 	let iconMenu = document.querySelector(".icon-menu");
-	let menuBody = document.querySelector(".menu__body");
+	let menuBody = document.querySelector(".main__body-mobile");
 	iconMenu.classList.remove("_active");
-	// menuBody.classList.remove("_active");
+	menuBody.classList.remove("_active");
 }
 //=================
 //BodyLock
@@ -1124,14 +1132,27 @@ window.onload = function () {
 				_removeClasses(document.querySelectorAll('.menu__item._hover'), "_hover");
 			}
 		}
-		if (targetElement.classList.contains('icon-menu')) {
-			document.querySelector('.main__body-mobile').classList.toggle('_active');
-		} else if (!targetElement.closest('.main__body-mobile') && document.querySelector('.main__body-mobile._active')) {
-			document.querySelector('.main__body-mobile').classList.remove('_active');
-			document.querySelector('.icon-menu').classList.remove('_active');
-			document.querySelector('body').classList.remove('_lock');
-		}
+		// if (targetElement.classList.contains('icon-menu')) {
+		// 	document.querySelector('.main__body-mobile').classList.toggle('_active');
+		// 	document.querySelector('body').classList.toggle('_lock');
+		// } else if (!targetElement.closest('.main__body-mobile') && document.querySelector('.main__body-mobile._active')) {
+		// 	document.querySelector('.main__body-mobile').classList.remove('_active');
+		// 	document.querySelector('.icon-menu').classList.remove('_active');
+		// 	document.querySelector('body').classList.remove('_lock');
+		// }
 	}
+
+	// Скрипт поднимающий сайт в начало после перезагрузки
+	$(document).ready(function () {
+		setTimeout(function () {
+			window.scrollTo(0, 0);
+		}, 1);
+	});
+
+	// Вызов мобильного меню
+	$('.icon-menu').on('click', function () {
+		$('.main__body-mobile').toggleClass('_active');
+	});
 
 	//Закрытие меню при клике на ссылку
 	$('.header__list-link').on("click", function () {
@@ -1166,7 +1187,7 @@ window.onload = function () {
 	$('#vegan-item').on("click", function () {
 		$('#vegan-title').toggleClass('vegan-title_active');
 		$('#vegan-btn').toggleClass('vegan-btn_active');
-		$('.vegan-bg').toggleClass('meat-bg_active');
+		$('.vegan-bg').toggleClass('vegan-bg_active');
 		$('#drink-title').removeClass('drink-title_active');
 		$('#drink-btn').removeClass('drink-btn_active');
 		$('.drink-bg').removeClass('drink-bg_active');
@@ -1186,6 +1207,9 @@ window.onload = function () {
 		$('#vegan-btn').removeClass('vegan-btn_active');
 		$('.vegan-bg').removeClass('vegan-bg_active');
 	});
+
+	// WOW
+	new WOW().init();
 
 	// Header
 	const headerElement = document.querySelector('.header');
