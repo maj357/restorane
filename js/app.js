@@ -225,84 +225,6 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) { }
 
-if (document.querySelector('.main-slider__body')) {
-	new Swiper('.main-slider__body', {
-		observer: true,
-		observeParents: true,
-		slidesPerView: 1, // показывается 1 слайд
-		watchOverflow: true,
-		autoplay: {
-			delay: 7000,
-		},
-		speed: 2000,
-		loop: true, // бесконечность
-		loopAdditionalSlides: 5,
-		preloadImages: false,
-		parallax: true,
-		// Dotts
-		pagination: {
-			el: '.controls-slider-main__dotts', //сюда писать класс дотс
-			clickable: true,
-		},
-		// Arrows
-		navigation: {
-			nextEl: '.controls-slider-main .slider-arrow_next', // 1ый класс указывать, 2ой тех.
-			prevEl: '.controls-slider-main .slider-arrow_prev',
-		}
-	});
-}
-
-if (document.querySelector('.quality__slider')) {
-	new Swiper('.quality__slider', {
-		observer: true,
-		observeParents: true,
-		slidesPerView: 2, // кол-во показываемых слайдов
-		spaceBetween: 5,
-		watchOverflow: false,
-		// Dotts
-		pagination: {
-			el: '.controls-quality__dotts',
-			clickable: true,
-		},
-	})
-}
-
-if (document.querySelector('.post__slider-body')) {
-	new Swiper('.post__slider-body', {
-		slidesPerView: 3, // показывается 1 слайд
-		speed: 1500,
-		watchOverflow: true,
-		// Dotts
-		// pagination: {
-		// 	el: '.controls-slider-main__dotts', //сюда писать класс дотс
-		// 	clickable: true,
-		// },
-		// Arrows
-		navigation: {
-			nextEl: '.item-slider__arrows .slider-arrow_next', // 1ый класс указывать, 2ой тех.
-			prevEl: '.item-slider__arrows .slider-arrow_prev',
-		},
-		parallax: true,
-		breakpoints: {
-			// when window width is >= 320px
-			320: {
-				slidesPerView: 1.1,
-				spaceBetween: 15
-			},
-			// when window width is >= 768px
-			768: {
-				slidesPerView: 2,
-				spaceBetween: 15
-			},
-			// when window width is >= 992px
-			1000: {
-				slidesPerView: 3,
-				spaceBetween: 15
-			}
-		}
-	});
-}
-
 if (document.querySelector('.slider__body')) {
 	new Swiper('.slider__body', {
 		observer: true,
@@ -1132,14 +1054,6 @@ window.onload = function () {
 				_removeClasses(document.querySelectorAll('.menu__item._hover'), "_hover");
 			}
 		}
-		// if (targetElement.classList.contains('icon-menu')) {
-		// 	document.querySelector('.main__body-mobile').classList.toggle('_active');
-		// 	document.querySelector('body').classList.toggle('_lock');
-		// } else if (!targetElement.closest('.main__body-mobile') && document.querySelector('.main__body-mobile._active')) {
-		// 	document.querySelector('.main__body-mobile').classList.remove('_active');
-		// 	document.querySelector('.icon-menu').classList.remove('_active');
-		// 	document.querySelector('body').classList.remove('_lock');
-		// }
 	}
 
 	// Скрипт поднимающий сайт в начало после перезагрузки
@@ -1147,6 +1061,11 @@ window.onload = function () {
 		setTimeout(function () {
 			window.scrollTo(0, 0);
 		}, 1);
+	});
+
+	// Вызов попапа при нажатии на кнопку
+	$('.contacts__info-btn').on('click', function () {
+		$('.popup_popup').toggleClass('_active');
 	});
 
 	// Вызов мобильного меню
@@ -1164,7 +1083,7 @@ window.onload = function () {
 	// Плавный скролл для ссылок по якорям
 	$("a.scroll").on('click', function () {
 		var elementClick = $(this).attr("href");
-		var destination = $(elementClick).offset().top;
+		var destination = $(elementClick).offset().top - 100;
 		jQuery("html:not(:animated),body:not(:animated)").animate({
 			scrollTop: destination
 		}, 800);
