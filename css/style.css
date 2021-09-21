@@ -1771,6 +1771,7 @@ body.ie ._ibg img {
   -webkit-transform: translate(-50%, 250%) skew(8deg);
       -ms-transform: translate(-50%, 250%) skew(8deg);
           transform: translate(-50%, 250%) skew(8deg);
+  color: #000;
   z-index: 2;
 }
 
