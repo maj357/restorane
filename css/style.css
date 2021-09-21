@@ -2562,27 +2562,40 @@ body.ie ._ibg img {
 }
 
 @media (any-hover: none) and (max-width: 767.98px) {
-  .item__menu {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(17, 17, 17, 0.7);
-    -webkit-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
+  .item__title.meat-title_active {
+    -webkit-transform: translate(20px, 0px);
+        -ms-transform: translate(20px, 0px);
+            transform: translate(20px, 0px);
   }
 
-  .item__menu.meat-bg_active {
-    background-color: rgba(17, 17, 17, 0);
+  .item__title.vegan-title_active {
+    -webkit-transform: translate(20px, 0px);
+        -ms-transform: translate(20px, 0px);
+            transform: translate(20px, 0px);
   }
 
-  .item__menu.vegan-bg_active {
-    background-color: rgba(17, 17, 17, 0);
+  .item__title.drink-title_active {
+    -webkit-transform: translate(20px, 0px);
+        -ms-transform: translate(20px, 0px);
+            transform: translate(20px, 0px);
   }
 
-  .item__menu.drink-bg_active {
-    background-color: rgba(17, 17, 17, 0);
+  .item__btn.meat-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+  }
+
+  .item__btn.vegan-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+  }
+
+  .item__btn.drink-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
   }
 }
 
@@ -2755,28 +2768,42 @@ body.ie ._ibg img {
 }
 
 @media (any-hover: none) {
+  .item__menu {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.7);
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+
+  .item__menu.meat-bg_active {
+    background-color: rgba(17, 17, 17, 0);
+  }
+
+  .item__menu.vegan-bg_active {
+    background-color: rgba(17, 17, 17, 0);
+  }
+
+  .item__menu.drink-bg_active {
+    background-color: rgba(17, 17, 17, 0);
+  }
+
   .item__menu::before {
     display: none;
   }
 
   .item__title.meat-title_active {
-    -webkit-transform: translate(20px, 0px);
-        -ms-transform: translate(20px, 0px);
-            transform: translate(20px, 0px);
     color: #fff;
   }
 
   .item__title.vegan-title_active {
-    -webkit-transform: translate(20px, 0px);
-        -ms-transform: translate(20px, 0px);
-            transform: translate(20px, 0px);
     color: #fff;
   }
 
   .item__title.drink-title_active {
-    -webkit-transform: translate(20px, 0px);
-        -ms-transform: translate(20px, 0px);
-            transform: translate(20px, 0px);
     color: #fff;
   }
 
@@ -2802,6 +2829,44 @@ body.ie ._ibg img {
             transform: translate(-50%, -75%) skew(0);
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@media (any-hover: none) and (any-hover: none) {
+  .item__menu.meat-bg_active {
+    -webkit-transform: translate(-50%, -55%);
+        -ms-transform: translate(-50%, -55%);
+            transform: translate(-50%, -55%);
+  }
+
+  .item__menu.vegan-bg_active {
+    -webkit-transform: translate(-50%, -55%);
+        -ms-transform: translate(-50%, -55%);
+            transform: translate(-50%, -55%);
+  }
+
+  .item__menu.drink-bg_active {
+    -webkit-transform: translate(-50%, -55%);
+        -ms-transform: translate(-50%, -55%);
+            transform: translate(-50%, -55%);
+  }
+
+  .item__btn.meat-btn_active {
+    -webkit-transform: translate(-50%, 250%) skew(0);
+        -ms-transform: translate(-50%, 250%) skew(0);
+            transform: translate(-50%, 250%) skew(0);
+  }
+
+  .item__btn.vegan-btn_active {
+    -webkit-transform: translate(-50%, 250%) skew(0);
+        -ms-transform: translate(-50%, 250%) skew(0);
+            transform: translate(-50%, 250%) skew(0);
+  }
+
+  .item__btn.drink-btn_active {
+    -webkit-transform: translate(-50%, 250%) skew(0);
+        -ms-transform: translate(-50%, 250%) skew(0);
+            transform: translate(-50%, 250%) skew(0);
   }
 }
 
