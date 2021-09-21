@@ -2600,6 +2600,26 @@ body.ie ._ibg img {
   }
 }
 
+@media (any-hover: none) and (any-hover: none) and (max-width: 767.98px) {
+  .item__btn.meat-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+  }
+
+  .item__btn.vegan-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+  }
+
+  .item__btn.drink-btn_active {
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
+  }
+}
+
 @media (max-width: 690px) {
   .menu__body {
     -webkit-box-pack: center;
