@@ -2452,6 +2452,14 @@ body.ie ._ibg img {
   }
 }
 
+@media (any-hover: none) and (max-width: 991.98px) {
+  .item::after {
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+  }
+}
+
 @media (any-hover: hover) and (max-width: 991.98px) {
   .item:hover::after {
     width: 100%;
@@ -2789,6 +2797,12 @@ body.ie ._ibg img {
 }
 
 @media (any-hover: none) {
+  .item::after {
+    width: 2px;
+    height: 100vh;
+    opacity: 0;
+  }
+
   .item__menu {
     top: 50%;
     left: 50%;
@@ -2845,49 +2859,16 @@ body.ie ._ibg img {
   }
 
   .item__btn.drink-btn_active {
-    -webkit-transform: translate(-50%, -75%) skew(0);
-        -ms-transform: translate(-50%, -75%) skew(0);
-            transform: translate(-50%, -75%) skew(0);
     opacity: 1;
     visibility: visible;
   }
 }
 
 @media (any-hover: none) and (any-hover: none) {
-  .item__menu.meat-bg_active {
-    -webkit-transform: translate(-50%, -55%);
-        -ms-transform: translate(-50%, -55%);
-            transform: translate(-50%, -55%);
-  }
-
-  .item__menu.vegan-bg_active {
-    -webkit-transform: translate(-50%, -55%);
-        -ms-transform: translate(-50%, -55%);
-            transform: translate(-50%, -55%);
-  }
-
-  .item__menu.drink-bg_active {
-    -webkit-transform: translate(-50%, -55%);
-        -ms-transform: translate(-50%, -55%);
-            transform: translate(-50%, -55%);
-  }
-
-  .item__btn.meat-btn_active {
-    -webkit-transform: translate(-50%, 250%) skew(0);
-        -ms-transform: translate(-50%, 250%) skew(0);
-            transform: translate(-50%, 250%) skew(0);
-  }
-
-  .item__btn.vegan-btn_active {
-    -webkit-transform: translate(-50%, 250%) skew(0);
-        -ms-transform: translate(-50%, 250%) skew(0);
-            transform: translate(-50%, 250%) skew(0);
-  }
-
   .item__btn.drink-btn_active {
-    -webkit-transform: translate(-50%, 250%) skew(0);
-        -ms-transform: translate(-50%, 250%) skew(0);
-            transform: translate(-50%, 250%) skew(0);
+    -webkit-transform: translate(-50%, -75%) skew(0);
+        -ms-transform: translate(-50%, -75%) skew(0);
+            transform: translate(-50%, -75%) skew(0);
   }
 }
 
